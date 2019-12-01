@@ -1,0 +1,3 @@
+com\services\gateway\responses\MonitorResponse.class
+com\services\gateway\GatewayApplication.class
+com\services\gateway\controller\MonitorController.class

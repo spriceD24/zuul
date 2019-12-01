@@ -1,0 +1,27 @@
+# Server config
+server:
+  port: 7878
+  servlet:
+    context-path: /researchservices
+  ssl:
+      key-store-type: JKS
+      key-store: classpath:keystore/researchservices.jks
+      key-store-password: changeit
+      key-alias: researchservices
+eureka: 
+     client: 
+        register-with-eureka: false
+        fetchRegistry: false
+        server:
+              waitTimeInMsWhenSyncEmpty: 0      
+#  Application logging
+logging:
+  level:
+    org.springframework.web: INFO
+  file: ./logs/application.log
+
+zuul:
+  routes:
+    messenger:
+      path: /csmessenger/**
+      url: http://localhost:8080/csmessenger
